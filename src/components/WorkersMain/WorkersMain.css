@@ -1,0 +1,18 @@
+.align-items-workers{
+    display: flex;
+    justify-content: center;
+}
+
+.align-items-workers .title-workersMain{
+    text-align: center;
+}
+
+.align-items-workers .card{
+    margin: 15px;
+    padding: 0 !important;
+    border: none;
+}
+
+.align-items-workers .card .card-img-top{
+    border-radius: 0% !important;
+}
