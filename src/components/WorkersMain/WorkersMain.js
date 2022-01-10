@@ -40,7 +40,7 @@ function WorkersMain() {
     <div className="container">
       <div className="row align-items-workers">
         <div className="title-workersMain">Find your Oompa Loompa</div>
-        <form class="d-flex">
+        <form className="d-flex">
           <input
             ref={inputEl}
             className="form-control me-2"
@@ -50,9 +50,6 @@ function WorkersMain() {
             value={searchTerm}
             onChange={getSearchTerm}
           />
-          <button class="btn btn-outline-success" type="submit">
-            Search
-          </button>
         </form>
         <MainTable workers={searchTerm.length < 1 ?workers : searchResult} />
       </div>
