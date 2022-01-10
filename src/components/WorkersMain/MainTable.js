@@ -1,7 +1,6 @@
 import React from "react";
 
 const MainTable = (props) => {
-  console.log("props", props);
   return (
     <>
       {props.workers.map((w) => (
