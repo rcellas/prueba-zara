@@ -16,14 +16,20 @@ function WorkersMain() {
     SetSearchTerm(searchTerm);
     if (searchTerm !== "") {
       const newWorkerList = workers.filter((worker) => {
-        return Object.values(worker).join("")
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase())
-          ;
+        if (
+          worker.first_name.toString().includes(searchTerm) ||
+          worker.last_name.toString().includes(searchTerm) ||
+          worker.profession.toString().includes(searchTerm)
+        ) {
+          return Object.values(worker)
+            .join("")
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase());
+        }
       });
       setSearchResult(newWorkerList);
-    }else{
-      setSearchResult(workers)
+    } else {
+      setSearchResult(workers);
     }
   };
   const getSearchTerm = () => {
@@ -40,7 +46,7 @@ function WorkersMain() {
     <div className="container">
       <div className="row align-items-workers">
         <div className="title-workersMain">Find your Oompa Loompa</div>
-        <form className="d-flex">
+        <form>
           <input
             ref={inputEl}
             className="form-control me-2"
@@ -51,7 +57,7 @@ function WorkersMain() {
             onChange={getSearchTerm}
           />
         </form>
-        <MainTable workers={searchTerm.length < 1 ?workers : searchResult} />
+        <MainTable workers={searchTerm.length < 1 ? workers : searchResult} />
       </div>
     </div>
   );
