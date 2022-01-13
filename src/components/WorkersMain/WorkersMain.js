@@ -49,11 +49,11 @@ function WorkersMain() {
         <h1 className="title-workersMain">Find your Oompa Loompa</h1>
         <h2 className="subtitle-workersMain">There are more than 10K</h2>
         <form className="d-flex justify-content-end ">
-          <div className="col-md-2 col-sm-12 input-search">
+          <div className="col-md-2 col-sm col-xs input-search">
             <input
               ref={inputEl}
               id="search"
-              className="form-control col-md-4 justify-content-end"
+              className="form-control col-md-4 col-sm justify-content-md-end"
               type="search"
               placeholder="Search"
               aria-label="Search"

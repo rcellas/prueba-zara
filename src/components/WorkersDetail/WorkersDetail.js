@@ -23,10 +23,10 @@ const WorkersDetail = () => {
   return (
     <div className="container workersDetail">
       <div className="row">
-        <div className="col">
+        <div className="col-md col-sm-12">
           <img src={workerDetail.image} />
         </div>
-        <div className="col">
+        <div className="col-md col-sm-12">
           <div className="workersDetailInfo">
             <h3>{workerDetail.first_name + "  " + workerDetail.last_name}</h3>
             <h4>{workerDetail.gender === "F" ? "Female" : "Male"}</h4>
