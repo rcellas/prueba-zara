@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
+import useLocalStorage from "../../Hooks/UseLocalStorage";
 import MainTable from "./MainTable";
 import "./WorkersMain.css";
 
 function WorkersMain() {
   const [workers, SetWorkers] = useState([]);
   const [searchTerm, SetSearchTerm] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
+  const [searchResult, setSearchResult] = useLocalStorage('Workers list Oompa Loompa',[]);
   const inputEl = useRef("");
 
   useEffect(() => {
@@ -45,19 +46,23 @@ function WorkersMain() {
   return (
     <div className="container">
       <div className="row align-items-workers">
-        <div className="title-workersMain">Find your Oompa Loompa</div>
-        <form>
-          <input
-            ref={inputEl}
-            className="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-            value={searchTerm}
-            onChange={getSearchTerm}
-          />
+        <h1 className="title-workersMain">Find your Oompa Loompa</h1>
+        <h2 className="subtitle-workersMain">There are more than 10K</h2>
+        <form className="d-flex justify-content-end ">
+          <div className="col-md-2 col-sm-12 input-search">
+            <input
+              ref={inputEl}
+              id="search"
+              className="form-control col-md-4 justify-content-end"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              value={searchTerm}
+              onChange={getSearchTerm}
+            />
+          </div>
         </form>
-        <MainTable workers={searchTerm.length < 1 ? workers : searchResult} />
+        <MainTable  workers={searchTerm.length < 1 ? workers : searchResult} />
       </div>
     </div>
   );

@@ -1,12 +1,27 @@
 .align-items-workers{
     display: flex;
     justify-content: center;
+    margin-top: 20px !important;
 }
 
 .align-items-workers .title-workersMain{
     text-align: center;
 }
 
+.align-items-workers .subtitle-workersMain{
+    text-align: center;
+    color: #7D7D7D;
+}
+
+.align-items-workers .input-search{
+    margin-right: 120px;
+}
+.align-items-workers .input-search #search{
+    background: url('../../img/ic_search.png') no-repeat scroll 180px 7px;
+    /* background-repeat: no-repeat; */
+    background-size: 20px;
+    padding-right: 17px;
+}
 .align-items-workers .card{
     margin: 15px;
     padding: 0 !important;

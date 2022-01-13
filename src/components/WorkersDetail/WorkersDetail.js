@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import useLocalStorage from "../../Hooks/UseLocalStorage";
 import { useParams } from "react-router-dom";
 
 const WorkersDetail = () => {
   const { id } = useParams();
-  const [workerDetail, setWorkerDetail] = useState([]);
+  const [workerDetail, setWorkerDetail] = useLocalStorage('Detail Worker Oompa Lompa',[]);
 
   useEffect(() => {
     CallApi();
