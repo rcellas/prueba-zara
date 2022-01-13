@@ -1,0 +1,25 @@
+.workersDetail{
+    margin-top: 40px;
+}
+
+.workersDetail img{
+    /* width: 80%; */
+}
+
+.workersDetail .workersDetailInfo{
+    text-align: initial;
+}
+
+.workersDetail .workersDetailInfo h4{
+    color: #7D7D7D;
+    font-weight: 400;
+}
+
+.workersDetail .workersDetailInfo h4:nth-child(3){
+    font-style: italic;
+}
+
+.workersDetail .workersDetailInfo p{
+    line-height: 20px;
+    margin-top: 40px;
+}

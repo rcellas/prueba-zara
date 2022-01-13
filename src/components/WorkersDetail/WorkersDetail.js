@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import useLocalStorage from "../../Hooks/UseLocalStorage";
 import { useParams } from "react-router-dom";
 
+import './WorkersDetail.css'
+
 const WorkersDetail = () => {
   const { id } = useParams();
   const [workerDetail, setWorkerDetail] = useLocalStorage('Detail Worker Oompa Lompa',[]);
@@ -19,19 +21,17 @@ const WorkersDetail = () => {
     setWorkerDetail(users);
   };
   return (
-    <div className="container">
+    <div className="container workersDetail">
       <div className="row">
         <div className="col">
           <img src={workerDetail.image} />
         </div>
         <div className="col">
-          <div>
+          <div className="workersDetailInfo">
             <h3>{workerDetail.first_name + "  " + workerDetail.last_name}</h3>
             <h4>{workerDetail.gender === "F" ? "Female" : "Male"}</h4>
             <h4>{workerDetail.profession}</h4>
-          </div>
-          <div>
-            <h5>{workerDetail.description}</h5>
+            <p>{workerDetail.description}</p>
           </div>
         </div>
       </div>
